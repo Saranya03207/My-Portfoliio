@@ -2,6 +2,10 @@ import "./Contact.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 function Contact() {
   const form = useRef();
 
@@ -16,23 +20,21 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_np6dvui",
-        "template_1e62ooo",
+        SERVICE_ID,
+        TEMPLATE_ID,
         form.current,
-        "RJU6UGUAq6iwQBxvl"
+        PUBLIC_KEY
       )
       .then(
         () => {
           setLoading(false);
           setStatus("✅ Message sent successfully!");
-
           form.current.reset();
         },
         (error) => {
           setLoading(false);
           setStatus("❌ Failed to send message.");
-
-          console.log(error.text);
+          console.error(error);
         }
       );
   };
@@ -43,8 +45,7 @@ function Contact() {
 
       <p className="subtitle">
         I'm currently looking for internships and full-time opportunities.
-        Feel free to reach out if you'd like to collaborate or discuss a
-        project.
+        Feel free to reach out if you'd like to collaborate or discuss a project.
       </p>
 
       <div className="contact-container">
