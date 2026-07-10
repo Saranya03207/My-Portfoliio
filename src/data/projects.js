@@ -6,11 +6,39 @@ import wallet from "../assets/projects/walletpay/UserDash.png";
 // Marine Project Cover Image
 import marine from "../assets/projects/marine/Home.jpg";
 
+// BloomWell Project Cover Image
+import bloomwell from "../assets/projects/bloomwell/dashboard.png";
 
 const projects = [
 
 {
     id:1,
+
+    title:"BloomWell - Women's Health & Fitness Platform",
+
+    image:bloomwell,
+
+    description:
+    "A cloud-enabled women's wellness platform that promotes physical health, mental wellness, hormonal balance, daily fitness tracking, and wellness education through a responsive web application. The project was deployed using AWS cloud services with GitHub integration, demonstrating cloud hosting, modern frontend deployment, and scalable web application architecture.",
+
+    technologies:[
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "AWS",
+        "GitHub",
+        "Cloud Deployment"
+    ],
+
+    github:"https://github.com/Saranya03207/Womens-Health-and-fitness",
+
+    demo:"https://saranya03207.github.io/Womens-Health-and-fitness/",
+
+    youtube:""
+},
+
+{
+    id:2,
 
     title:"Multi-Service Technician Booking Platform",
 
@@ -36,7 +64,7 @@ const projects = [
 },
 
 {
-    id:2,
+    id:3,
 
     title:"Unified Web Platform for Marine Scientists",
 
@@ -63,7 +91,7 @@ const projects = [
 },
 
 {
-    id:3,
+    id:4,
 
     title:"Digital Payment Wallet System",
 

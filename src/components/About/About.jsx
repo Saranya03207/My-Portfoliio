@@ -71,18 +71,6 @@ A passionate Computer Science Engineering student who enjoys building scalable w
 
 </div>
 
-<div className="info-card">
-
-<FaLanguage className="icon"/>
-
-<h3>Languages</h3>
-
-<p>English</p>
-
-<p>Tamil</p>
-
-</div>
-
 </div>
 
 </section>

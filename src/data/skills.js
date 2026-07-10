@@ -4,15 +4,16 @@ const skills = {
     "Java",
     "JavaScript",
     "Python",
-    "SQL",
-    "HTML",
-    "CSS"
+    "SQL"
+    
   ],
 
   frontend: [
     "React",
     "Bootstrap",
-    "Tailwind CSS"
+    "Tailwind CSS",
+    "HTML",
+    "CSS"
   ],
 
   backend: [
@@ -32,8 +33,6 @@ const skills = {
   devops: [
     "Docker",
     "Jenkins",
-    "Git",
-    "GitHub"
   ],
 
   concepts: [
@@ -42,6 +41,11 @@ const skills = {
     "DBMS",
     "REST API",
     "JWT Authentication"
+  ],
+
+  development_tools:[
+    "Git",
+    "Github"
   ]
 
 };

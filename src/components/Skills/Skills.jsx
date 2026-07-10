@@ -127,6 +127,10 @@ function Skills() {
           items={skills.concepts}
         />
 
+        <SkillCard
+         title="Development Tools"
+         items={skills.development_tools}
+         />
       </div>
 
     </section>

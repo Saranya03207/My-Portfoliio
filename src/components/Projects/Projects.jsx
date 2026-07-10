@@ -2,134 +2,91 @@ import "./Projects.css";
 import projects from "../../data/projects";
 
 import {
- FaGithub,
- FaYoutube
+  FaGithub,
+  FaYoutube,
+  FaExternalLinkAlt
 } from "react-icons/fa";
 
 function Projects() {
+  return (
+    <section className="projects" id="projects">
+      <h2 className="section-title">
+        Featured Projects
+      </h2>
 
-return (
+      <p className="section-subtitle">
+        Some of the projects I've built using Java, Spring Boot, React, Python
+        and Cloud technologies.
+      </p>
 
-<section className="projects" id="projects">
+      <div className="project-container">
+        {projects.map((project) => (
+          <div
+            className="project-card"
+            key={project.id}
+          >
+            <div className="project-image">
+              <img
+                src={project.image}
+                alt={project.title}
+              />
+            </div>
 
-<h2 className="section-title">
+            <div className="project-content">
+              <h3>{project.title}</h3>
 
-Featured Projects
+              <p>{project.description}</p>
 
-</h2>
+              <div className="tech-stack">
+                {project.technologies.map((tech, index) => (
+                  <span key={index}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
-<p className="section-subtitle">
+              <div className="project-buttons">
 
-Some of the projects I've built using Java, Spring Boot, React, Python and Cloud technologies.
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub />
+                    GitHub
+                  </a>
+                )}
 
-</p>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaExternalLinkAlt />
+                    Live Demo
+                  </a>
+                )}
 
-<div className="project-container">
+                {project.youtube && (
+                  <a
+                    href={project.youtube}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaYoutube />
+                    Watch Demo
+                  </a>
+                )}
 
-{
-
-projects.map((project)=>(
-
-<div
-className="project-card"
-key={project.id}
->
-
-<div className="project-image">
-
-<img
-src={project.image}
-alt={project.title}
-/>
-
-</div>
-
-<div className="project-content">
-
-<h3>
-
-{project.title}
-
-</h3>
-
-<p>
-
-{project.description}
-
-</p>
-
-<div className="tech-stack">
-
-{
-
-project.technologies.map((tech,index)=>(
-
-<span key={index}>
-
-{tech}
-
-</span>
-
-))
-
-}
-
-</div>
-
-<div className="project-buttons">
-
-{
-
-project.github &&
-
-<a
-href={project.github}
-target="_blank"
-rel="noreferrer"
->
-
-<FaGithub/>
-
-GitHub
-
-</a>
-
-}
-
-{
-
-project.youtube &&
-
-<a
-href={project.youtube}
-target="_blank"
-rel="noreferrer"
->
-
-<FaYoutube/>
-
-Watch Demo
-
-</a>
-
-}
-
-</div>
-
-</div>
-
-</div>
-
-))
-
-}
-
-</div>
-
-</section>
-
-);
-
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Projects;
